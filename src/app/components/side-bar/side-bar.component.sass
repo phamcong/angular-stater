@@ -1,0 +1,33 @@
+@import "~bootstrap/scss/functions"
+@import "~bootstrap/scss/variables"
+
+.sidebar-panel
+    min-height: 500px
+    background-color: $indigo-900
+    margin-right: 5px
+    position: relative
+
+.sidebar-overlay
+    position: absolute
+    z-index: 2
+
+.sidebar-item
+    display: flex
+    height: 40px
+    align-items: center
+    color: white
+
+.sidebar-icon-wrapper
+    @extend .sidebar-item
+    justify-content: center
+    font-size: 1.2rem
+    width: 40px
+
+.sidebar-label-wrapper
+    @extend .sidebar-item
+    justify-content: left
+
+.sidebar-item-line
+    @extend .sidebar-item
+    border-top: solid 0.01em $gray-800
+    flex-direction: row

@@ -1,27 +1,30 @@
-import { createReducer, on } from "@ngrx/store"
+import { Action, createReducer, on } from "@ngrx/store"
 import { DATA_ACTIONS } from './data.actions'
 
 export interface AppState {
   data: {
-    evalationData: any[]
+    chartData: any[]
   }
 }
 
 export interface DataState {
-  evalationData: any[]
+  chartData: any[]
 }
 
-export const initDataState = {
-  evalationData: []
+export const initDataState: DataState = {
+  chartData: []
 }
 
-
-export const dataReducer = createReducer(
+const dataReducer = createReducer(
   initDataState,
-  on(DATA_ACTIONS.GET_ELEVATION_DATA_SUCCESS, (state, action) => {
+  on(DATA_ACTIONS.GET_CHART_DATA_SUCCESS, (state, action) => {
     return {
       ...state,
-      evalationData: action.evalData
+      chartData: action.chartData
     }
   })
 )
+
+export function reducer(state: DataState | undefined, action: Action) {
+  return dataReducer(state, action)
+}

@@ -1,0 +1,21 @@
+<div class="sidebar-panel h-100"
+     [class.sidebar-overlay]="overlay"
+     [ngStyle]="{ width: expanded ? '250px' : '40px', 'z-index': overlay ? 100 : 1 }">
+  <div class="sidebar-icon-wrapper selectable"
+       (click)="toggleAction.onClick()">
+    <i [ngClass]="toggleAction.icon()"></i>
+  </div>
+  <div class="sidebar-item-line"
+       [class.disabled]="action.disabled"
+       [class.selectable]="!action.disabled"
+       [class.selected]="action.key == selectedActionKey"
+       *ngFor="let action of actions"
+       (click)="action.onClick(); selectedActionKey = action.key">
+    <div class="sidebar-icon-wrapper">
+      <i [ngClass]="action.icon"></i>
+    </div>
+    <div *ngIf="expanded && action.label" class="sidebar-label-wrapper">
+      {{action.label}}
+    </div>
+  </div>
+</div>

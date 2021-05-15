@@ -1,27 +1,44 @@
 import { HttpClientModule } from '@angular/common/http'
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { EffectsModule } from '@ngrx/effects'
 import { StoreModule } from '@ngrx/store'
+import { StoreDevtoolsModule } from '@ngrx/store-devtools'
+import { HighchartsChartModule } from 'highcharts-angular'
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown'
+import { environment } from 'src/environments/environment'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
+import { DataVizComponent } from './components/data-viz/data-viz.component'
+import { SideBarComponent } from './components/side-bar/side-bar.component'
 import { DataEffects } from './data/data.effects'
-import { dataReducer } from './data/data.reducer'
+import * as fromData from './data/data.reducer'
 
 const appState = {
-  data: dataReducer
+  data: fromData.reducer
 }
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DataVizComponent,
+    SideBarComponent
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot(appState),
+    StoreModule.forRoot(appState, {}),
     EffectsModule.forRoot([DataEffects]),
+    // Instrumentation must be imported after importing StoreModule (config is optional)
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production, // Restrict extension to log-only mode
+    }),
+    BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    HighchartsChartModule,
+    BsDropdownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,22 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-stater';
+  public sidebarActions = [
+    {
+      label: 'Dashboard',
+      key: 'dashboard',
+      disabled: true,
+      icon: 'bi bi-columns',
+      onClick: () => { }
+    },
+    {
+      label: 'Data visualization',
+      key: 'data-viz',
+      disabled: false,
+      icon: 'bi bi-bar-chart-line',
+      onClick: () => { }
+    }
+  ]
+  public sltActionKey = 'data-viz'
+  public overlay = false
 }
