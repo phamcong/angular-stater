@@ -20,8 +20,6 @@ export class SideBarComponent implements OnInit {
     onClick: () => this.expanded = !this.expanded
   };
 
-  get allActions() { return [this.toggleAction, ...this.actions]; }
-
   constructor() { }
 
   ngOnInit(): void {

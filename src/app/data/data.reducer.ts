@@ -1,19 +1,19 @@
-import { Action, createReducer, on } from "@ngrx/store"
-import { DATA_ACTIONS } from './data.actions'
+import { Action, createReducer, on } from '@ngrx/store';
+import { DATA_ACTIONS } from './data.actions';
 
 export interface AppState {
   data: {
-    chartData: any[]
-  }
+    chartData: any[];
+  };
 }
 
 export interface DataState {
-  chartData: any[]
+  chartData: any[];
 }
 
 export const initDataState: DataState = {
   chartData: []
-}
+};
 
 const dataReducer = createReducer(
   initDataState,
@@ -21,10 +21,10 @@ const dataReducer = createReducer(
     return {
       ...state,
       chartData: action.chartData
-    }
+    };
   })
-)
+);
 
 export function reducer(state: DataState | undefined, action: Action) {
-  return dataReducer(state, action)
+  return dataReducer(state, action);
 }
