@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http'
-import { Injectable } from "@angular/core"
-
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { of } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -10,6 +10,6 @@ export class DataService {
   ) { }
 
   getScatterPlotData = () => {
-    return this.http.get('assets/scatter-plot.json')
+    return of([]);
   }
 }

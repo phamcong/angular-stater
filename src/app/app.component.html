@@ -1,11 +1,13 @@
-<div class="header-panel">
+<div class="header-panel p-2 d-flex align-items-center">
 </div>
 <div class="app-content">
   <app-side-bar [actions]="sidebarActions"
                 [selectedActionKey]="sltActionKey"
                 [expanded]="false"
-                [overlay]="overlay"></app-side-bar>
-  <div class="page-content" [ngStyle]="{'padding-left': overlay ? '50px' : '5px'}">
+                [overlay]="overlay">
+  </app-side-bar>
+  <div class="page-content"
+       [ngStyle]="{'padding-left': overlay ? '50px' : '5px'}">
     <router-outlet></router-outlet>
   </div>
 </div>

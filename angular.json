@@ -26,7 +26,7 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [              
+            "styles": [
               "src/styles.sass"
             ],
             "scripts": [
@@ -75,12 +75,6 @@
             }
           }
         },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "angular-stater:build"
-          }
-        },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
@@ -124,6 +118,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "angular-stater"
 }

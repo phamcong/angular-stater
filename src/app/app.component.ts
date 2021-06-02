@@ -1,11 +1,11 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'angular-stater';
   public sidebarActions = [
     {
@@ -22,7 +22,12 @@ export class AppComponent {
       icon: 'bi bi-bar-chart-line',
       onClick: () => { }
     }
-  ]
-  public sltActionKey = 'data-viz'
-  public overlay = false
+  ];
+  public sltActionKey = 'data-viz';
+  public overlay = false;
+
+  constructor() { }
+
+  ngOnInit() { }
+
 }

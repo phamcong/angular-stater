@@ -1,13 +1,7 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
-import { DataVizComponent } from './components/data-viz/data-viz.component'
 
-const routes: Routes = [
-  { 
-    path: 'data-viz',
-    component: DataVizComponent    
-  }
-];
+const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
