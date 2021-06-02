@@ -6,7 +6,6 @@ export interface AppState {
     chartData: any[];
   };
 }
-
 export interface DataState {
   chartData: any[];
 }

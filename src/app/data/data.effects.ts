@@ -1,11 +1,11 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { Store } from "@ngrx/store";
-import { EMPTY } from "rxjs";
-import { catchError, exhaustMap, map } from "rxjs/operators";
+import { Store } from '@ngrx/store';
+import { EMPTY } from 'rxjs';
+import { catchError, exhaustMap, map } from 'rxjs/operators';
 import { DATA_ACTIONS } from './data.actions';
-import * as fromData from "./data.reducer";
-import { DataService } from "./data.service";
+import * as fromData from './data.reducer';
+import { DataService } from './data.service';
 
 @Injectable()
 export class DataEffects {
