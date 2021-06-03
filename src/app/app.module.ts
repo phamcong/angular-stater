@@ -10,6 +10,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CovidMapComponent } from './components/covid-map/covid-map.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { DataEffects } from './data/data.effects';
 import * as fromData from './data/data.reducer';
@@ -21,7 +22,8 @@ const appState = {
 @NgModule({
   declarations: [
     AppComponent,
-    SideBarComponent
+    SideBarComponent,
+    CovidMapComponent
   ],
   imports: [
     BrowserModule,

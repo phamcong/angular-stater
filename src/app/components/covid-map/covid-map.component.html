@@ -1,0 +1,24 @@
+<div class="card text-white bg-dark border-gray h-100">
+  <div class="card-header d-flex flex-row">
+    <div class="flex-grow-1 text-uppercase fw-bold">{{ sltMapMode.name }}</div>
+    <ng-container *ngTemplateOutlet="mapTypeSelector"></ng-container>
+  </div>
+  <div class="card-body flex-grow-1">
+    <!-- [oneToOne]="true" is required -->
+    <highcharts-chart class="h-100 w-100 d-block"
+                      [oneToOne]="true"
+                      [Highcharts]="Highcharts"
+                      [options]="chartOptions$ | async">
+    </highcharts-chart>
+  </div>
+</div>
+
+<ng-template #mapTypeSelector>
+  <button *ngFor="let mode of mapModes"
+          class="btn btn-sm mx-1"
+          [class.btn-primary]="sltMapMode.key === mode.key"
+          [class.btn-secondary]="sltMapMode.key !== mode.key"
+          (click)="onChangeMapType(mode.key)">
+  {{ mode.name }}
+  </button>
+</ng-template>
