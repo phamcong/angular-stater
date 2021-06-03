@@ -10,11 +10,13 @@
        [class.selectable]="!action.disabled"
        [class.selected]="action.key == selectedActionKey"
        *ngFor="let action of actions"
-       (click)="action.onClick(); selectedActionKey = action.key">
+       [routerLink]="action.link"
+       (click)="action.onClick && action.onClick(); selectedActionKey = action.key">
     <div class="sidebar-icon-wrapper">
       <i [ngClass]="action.icon"></i>
     </div>
-    <div *ngIf="expanded && action.label" class="sidebar-label-wrapper">
+    <div *ngIf="expanded && action.label"
+         class="sidebar-label-wrapper">
       {{ action.label }}
     </div>
   </div>

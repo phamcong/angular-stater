@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,22 +12,27 @@ export class AppComponent implements OnInit {
     {
       label: 'Dashboard',
       key: 'dashboard',
-      disabled: true,
+      disabled: false,
       icon: 'bi bi-columns',
-      onClick: () => { }
+      onClick: () => {
+        alert(`onClick was trigged. Only 'link' or 'onClick' property should be specified, not both!`);
+        this.router.navigate(['/dashboard']);
+      }
     },
     {
       label: 'Data visualization',
       key: 'data-viz',
       disabled: false,
       icon: 'bi bi-bar-chart-line',
-      onClick: () => { }
+      link: 'data-viz'
     }
   ];
-  public sltActionKey = 'data-viz';
+  public sltActionKey = 'dashboard';
   public overlay = false;
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() { }
 

@@ -11,6 +11,7 @@ import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CovidMapComponent } from './components/covid-map/covid-map.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { DataEffects } from './data/data.effects';
 import * as fromData from './data/data.reducer';
@@ -23,7 +24,8 @@ const appState = {
   declarations: [
     AppComponent,
     SideBarComponent,
-    CovidMapComponent
+    CovidMapComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
